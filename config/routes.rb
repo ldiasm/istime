@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
-  root 'babytimes#index'
+
+  root 'babytimes#new'
   resources :babytimes
 
   # The priority is based upon order of creation: first created -> highest priority.

@@ -1,5 +1,30 @@
 
-<%= form_for @food do |f| %>
-    <%= f.text_field :name %>
-    <%= f.submit :"save to feed me" %>
-<% end %>
+<div style="background-image: url('http://goo.gl/7mtA50'); width: auto; padding: 4px;" align="center">
+  <p><h2>Put food on the table!! :D</h2></p>
+  </br>
+  <%= form_for @food, class:'form-horizontal center' do |f| %>
+      <p>
+        <%= f.text_field :name, class:'input-lg', placeholder:'Comerei o que?' %>
+        <br/>
+      </p>
+      <%= f.submit 'save to feed me', class:'btn btn-default btn-lg' %>
+      <br/>
+  <% end %>
+</div>
+<div>
+  <table class="table table-striped table-bordered table-responsive">
+    <tr>
+      <th>Food</th>
+      <th>"Hora"</th>
+      <th>"Action"</th>
+    </tr>
+
+    <% @foods.each do |f| %>
+        <tr>
+          <td><%= f.name %></td>
+          <td><%=:"to do: horário do alerta"%></td>
+          <td class="form-inline"><%=:"to do: botão alertar e excluir" %>
+        </tr>
+    <% end %>
+  </table>
+</div>
